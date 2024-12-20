@@ -41,5 +41,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# app.config (api key)
-/src/app/app.config.ts
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
+
+# Environments .ts files
+src/environments/*.ts
