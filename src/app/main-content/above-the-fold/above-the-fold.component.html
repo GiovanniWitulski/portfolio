@@ -1,1 +1,31 @@
-<p>above-the-fold works!</p>
+<section>
+    <div class="next-section-arrow">
+        <a href="#"><img src="icon/arrow-down.png" alt=""></a>
+        <div></div>
+    </div>
+    <div class="name-and-btns">
+        <h1>Frontend Developer</h1>
+        <h2>Giovanni Witulski</h2>
+        <div>
+            <a href="#portfolio">Check my work</a>
+            <a href="#contact">Contact me</a>
+        </div>
+    </div>
+    <div class="social-media-links">
+        <div class="email">
+            <a class="email" href="#contact">Developer&#64;Giovanni-Witulski.com</a>
+        </div>
+        <a href="#"><img src="icon/github.png" alt=""></a>
+        <a href="#"><img src="icon/linkedin.png" alt=""></a>
+        <div></div>
+    </div>
+
+    <div class="hide-animation-overflow-container">
+        <div class="text-animation-container">
+            <div class="text-animation">
+                <span *ngFor="let text of texts">{{ text }}</span>
+                <span *ngFor="let text of texts">{{ text }}</span>
+            </div>
+        </div>
+    </div>
+</section>
