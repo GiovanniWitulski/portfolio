@@ -1,1 +1,11 @@
-<p>portfolio works!</p>
+<section>
+    <p>Portfolio</p>
+    <h1>Featured Projects</h1>
+    <span>
+        Explore a selection of my work here - 
+        Interact with <br> projects to see my skills in action.
+    </span>
+    <div>
+        <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
+    </div>
+</section>

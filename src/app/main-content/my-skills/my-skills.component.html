@@ -1,1 +1,42 @@
-<p>my-skills works!</p>
+<section>
+    <div class="skill-set-parant-container">
+        <p>Technologies</p>
+        <div class="skill-set-container">
+            <h1>Skill Set</h1>
+            <span>
+                My journey has involved working on diverse projects, 
+                employing a range of frontend technologies and concepts. 
+                I am open to embracing new technologies and methodologies to Continously 
+                enhance my skills and stay ahead in the ever-evolving landscape of web development.
+            </span>
+            <h2>You need <b>another skill?</b></h2>
+            <span>
+                Feel free to contact me. 
+                I look forward to expanding on my previous knowledge.
+            </span>
+            <a href="#contact">Lets Talk</a>
+        </div>
+    </div>
+
+    <div class="skill-icons-container">
+        <div *ngFor="let icon of icons">
+            <img loading="lazy" [src]="icon.src" [alt]="icon.name">
+            <div class="speech-bubble" *ngIf="icon.name === 'Growth mindset'">
+                <div>
+                    <span>I have a special interest in learning</span>
+                    <div>
+                        <div>
+                            <img src="icon/python.png" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div>
+                            <img src="icon/django.png" alt="Django">
+                            <span>Django</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="growth-mindset-text">{{ icon.name }}</span>
+        </div>
+    </div>
+</section>
