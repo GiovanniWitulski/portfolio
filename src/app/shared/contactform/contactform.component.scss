@@ -1,0 +1,153 @@
+div {
+  width: 100%;
+
+  > form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    > div:not(.checkbox-container, .submit-btn-container) {
+      display: flex;
+      flex-direction: column;
+      padding: 32px;
+      border-top: 1px solid rgb(61, 207, 182);
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      font-size: 18px;
+      transition: all 125ms ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(61, 207, 182, 0.1);
+        > label,
+        input,
+        textarea {
+          cursor: pointer;
+
+          &::placeholder {
+            color: white;
+          }
+        }
+      }
+
+      > label {
+        font-family: "Fira Code";
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.8px;
+        color: rgb(61, 207, 182);
+        margin-bottom: 16px;
+      }
+
+      > input,
+      textarea {
+        transition: all 125ms ease-in-out;
+        background-color: transparent;
+        border: none;
+        height: 22px;
+        font-family: "Karla";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.6px;
+        transition-property: padding, height, border-radius;
+        transition-duration: 125ms, 125ms, 125ms;
+        transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+        transition-delay: 0ms, 0ms, 125ms;
+        outline: none;
+        color: white;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          align-items: center;
+          transition: color 125ms ease-in-out;
+        }
+
+        &:focus-visible {
+          padding: 10px;
+          border-radius: 10px;
+        }
+
+        &:focus {
+          border: 1px solid;
+          border-color: rgb(61, 207, 182);
+        }
+      }
+
+      > textarea {
+        resize: none;
+        max-width: 100%;
+        min-width: 100%;
+        height: 22px;
+        overflow: hidden;
+
+        &:focus-visible {
+          height: 200px;
+        }
+      }
+    }
+
+    > .checkbox-container {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 40px 0;
+      border-top: 1px solid rgb(61, 207, 182);
+
+      > input {
+        accent-color: rgb(61, 207, 182);
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        content: url(../../../../public/icon/check-mark-box.png);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(61, 207, 182, 0.1);
+          filter: drop-shadow(10px 0px 16px rgba(61, 207, 182, 0.1));
+        }
+
+        &:checked {
+          content: url(../../../../public/icon/check-mark.png);
+        }
+      }
+
+      > label {
+        font-family: "Karla";
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+        > a {
+          color: rgb(61, 207, 182);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.submit-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  > input {
+    font-family: "Karla";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 100px;
+  }
+}

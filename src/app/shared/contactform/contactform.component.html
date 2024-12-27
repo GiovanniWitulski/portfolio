@@ -1,19 +1,57 @@
 <div>
-    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <label for="name">Name</label>
-        <input [(ngModel)]="contactData.name" id="name" type="text" name="name" placeholder="Your name.." required>
-
-        <label for="email">Email</label>
-        <input [(ngModel)]="contactData.email" id="email" type="text" name="email" placeholder="Your email adress.." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-
-        <label for="massage">Subject</label>
-        <textarea #massage="ngModel" [(ngModel)]="contactData.message" minlength="4" id="massage" name="massage" placeholder="Write something" style="height: 200px;" required></textarea>
-        @if (!massage.valid && massage.touched) {
-            <span>Please enter a messege</span>
-        }
-
-        <input type="submit" value="submit">
-    </form>
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <div>
+      <label for="name">What's your name?</label>
+      <input
+        [(ngModel)]="contactData.name"
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Your name goes here"
+        required
+      />
+    </div>
+    <div>
+      <label for="email">What's your email?</label>
+      <input
+        [(ngModel)]="contactData.email"
+        id="email"
+        type="text"
+        name="email"
+        placeholder="youremail@email.com"
+        required
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+      />
+    </div>
+    <div>
+      <label for="massage">How can I help you?</label>
+      <textarea
+        #massage="ngModel"
+        [(ngModel)]="contactData.message"
+        minlength="4"
+        id="massage"
+        name="massage"
+        placeholder="Hello Lukas, I am interested in..."
+        required
+      ></textarea>
+    </div>
+    <div class="checkbox-container">
+      <input
+        type="checkbox"
+        id="privacyPolicy"
+        name="privacyPolicy"
+        [(ngModel)]="privacyPolicyChecked"
+        required
+      />
+      <label for="privacyPolicy"
+        >I've read the <a href="#">Privacy Policy</a> and agree to the
+        processing of my data as outlined.</label
+      >
+    </div>
+    <div class="submit-btn-container">
+      <input type="submit" value="Say Hello ;)" />
+    </div>
+  </form>
 </div>
 
 <!-- validierung überprüfen + designen bruhh  -->
