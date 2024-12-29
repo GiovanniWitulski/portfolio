@@ -1,15 +1,60 @@
-<div class="card">
-    <div>
-        <h2>{{ project.title }}</h2>
-        <img class="arrow-outward" src="icon/arrow-outward.png" alt="Arrow outward">
-    </div>
-    <div class="project-img-container">
-        <img class="project-img" src="{{ project.imageUrl }}" alt="{{ project.title + ' image' }}">
-        <img class="background-img" src="img/img-background.png" alt="">
-    </div>
-    <span>
-        <span *ngFor="let tech of project.technologies; let i = index">
-            {{ tech.name }} <span *ngIf="i < project.technologies.length - 1">|</span>
-       </span>
+<div class="card" (click)="openCard()">
+  <div>
+    <h2>{{ project.title }}</h2>
+    <img
+      class="arrow-outward"
+      src="icon/arrow-outward.png"
+      alt="Arrow outward"
+    />
+  </div>
+  <div class="project-img-container">
+    <img
+      class="project-img"
+      src="{{ project.imageUrl }}"
+      alt="{{ project.title + ' image' }}"
+    />
+    <img class="background-img" src="img/img-background.png" alt="" />
+  </div>
+  <span>
+    <span *ngFor="let tech of project.technologies; let i = index">
+      {{ tech.name }} <span *ngIf="i < project.technologies.length - 1">|</span>
     </span>
+  </span>
+</div>
+
+<div
+  class="overlay-container"
+  *ngIf="showContainer && openedCardIndex !== null"
+>
+  <div class="container-content">
+    <div class="left-container-content">
+      <h1>0{{ openedCardIndex + 1 }}</h1>
+      <h2>{{ project.title }}</h2>
+      <p>What is this project about?</p>
+      <span>{{ project.description }}</span>
+      <div class="technologies-container">
+        <div *ngFor="let tech of project.technologies; let i = index">
+          <img src="{{ tech.imgSrc }}" alt="{{ tech.name }}" />
+          <span>{{ tech.name }}</span>
+        </div>
+      </div>
+      <div class="btns-container">
+        <a href="#"
+          >GitHub <img src="icon/arrow-outward-colored.png" alt=""
+        /></a>
+        <a href="#"
+          >Live Test <img src="icon/arrow-outward-colored.png" alt=""
+        /></a>
+      </div>
+    </div>
+    <div class="right-container-content">
+      <div>
+        <img src="icon/x.png" alt="" (click)="closeContainer()" />
+      </div>
+      <img src="img/skyrim-map.jpg" alt="" />
+      <button>
+        Next project <img src="icon/arrow-forward-colored.png" alt="" />
+      </button>
+    </div>
+  </div>
 </div>

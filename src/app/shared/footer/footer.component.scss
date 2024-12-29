@@ -1,0 +1,52 @@
+section {
+  padding: 0 96px 64px 96px;
+  background-color: rgb(28, 28, 28);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    font-family: "Karla";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    gap: 8px;
+
+    > span {
+      color: white;
+    }
+
+    > a {
+    }
+  }
+
+  > p {
+    color: rgb(61, 207, 182);
+    font-family: "Fira Code";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+}
+
+.logo {
+  margin-bottom: 32px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: all 125ms ease-in-out;
+
+  &:hover {
+    color: rgb(61, 207, 182);
+  }
+}
