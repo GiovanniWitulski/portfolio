@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     <div>
       <label for="name">What's your name?</label>
@@ -34,6 +34,79 @@
         placeholder="Hello Giovanni, I am interested in..."
         required
       ></textarea>
+      @if (!massage.valid && massage.touched) {
+      
+      }
+    </div>
+    <div class="checkbox-container">
+      <input
+        type="checkbox"
+        id="privacyPolicy"
+        name="privacyPolicy"
+        [(ngModel)]="privacyPolicyChecked"
+        required
+      />
+      <label for="privacyPolicy"
+        >I've read the <a href="#">Privacy Policy</a> and agree to the
+        processing of my data as outlined.</label
+      >
+    </div>
+    <div class="submit-btn-container">
+      <input type="submit" value="Say Hello ;)" />
+    </div>
+  </form>
+</div> -->
+
+<div>
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <div>
+      <label for="name">What's your name?</label>
+      <input
+        #name="ngModel"
+        [(ngModel)]="contactData.name"
+        minlength="3"
+        id="name"
+        type="text"
+        name="name"
+        [placeholder]="
+          name.touched && !name.valid ? nameErrorText : namePlaceholder
+        "
+        [style.color]="name.touched && !name.valid ? 'red' : 'white'"
+        required
+      />
+    </div>
+    <div>
+      <label for="email">What's your email?</label>
+      <input
+        #email="ngModel"
+        [(ngModel)]="contactData.email"
+        id="email"
+        type="text"
+        name="email"
+        [placeholder]="
+          email.touched && !email.valid ? emailErrorText : emailPlaceholder
+        "
+        [style.color]="email.touched && !email.valid ? 'red' : 'white'"
+        required
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+      />
+    </div>
+    <div>
+      <label for="massage">How can I help you?</label>
+      <textarea
+        #massage="ngModel"
+        [(ngModel)]="contactData.message"
+        minlength="4"
+        id="massage"
+        name="massage"
+        [placeholder]="
+          massage.touched && !massage.valid
+            ? messageErrorText
+            : messagePlaceholder
+        "
+        [style.color]="massage.touched && !massage.valid ? 'red' : 'white'"
+        required
+      ></textarea>
     </div>
     <div class="checkbox-container">
       <input
@@ -53,5 +126,3 @@
     </div>
   </form>
 </div>
-
-<!-- validierung überprüfen + designen bruhh  -->

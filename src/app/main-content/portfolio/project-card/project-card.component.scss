@@ -129,7 +129,7 @@
   );
   width: 100%;
   margin: 0 96px;
-  padding: 0 80px;
+  padding: 56px 80px;
   border: 1px solid rgb(61, 207, 182);
   border-radius: 30px;
   display: flex;
@@ -254,8 +254,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 56px;
     margin-bottom: 40px;
+    gap: 10px;
+    height: 100%;
     cursor: pointer;
 
     > img {
@@ -272,10 +273,19 @@
   }
 
   > img {
-    width: 520px;
+    // width: 520px;
     height: 370px;
+    max-width: -webkit-fill-available;
+
+    // max-width: inherit;
     margin-bottom: 48px;
     border-radius: 30px;
+    aspect-ratio: 4 / 3;
+
+    @media screen and (max-width: 1380px) {
+      width: 90%;
+      height: auto;
+    }
   }
 
   > button {
@@ -285,7 +295,7 @@
     align-items: center;
     height: 40px;
     margin-right: 10px;
-    margin-bottom: 56px;
+    // margin-bottom: 56px;
     color: rgb(61, 207, 182);
     font-family: "Karla";
     font-size: 18px;

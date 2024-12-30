@@ -1,49 +1,78 @@
 nav {
-    position: absolute;
-    left: 0;
-    right: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 96px;
+  height: 98px;
+  background: linear-gradient(to bottom, rgb(28 28 28), transparent 100%);
+  z-index: 3;
+
+  > div {
     display: flex;
-    justify-content: space-between;
+    gap: 24px;
     align-items: center;
-    padding: 0 96px;
-    height: 98px;
-    background: linear-gradient(to bottom, rgb(28 28 28), transparent 100%);
-    z-index: 3;
 
-    >div {
-        display: flex;
-        gap: 20px;
-        align-items: center;
+    > div {
+      color: white;
+      display: flex;
+      gap: 5px;
+      padding: 3px 6px;
+      border: 1px solid rgb(61 207 182);
+      border-radius: 100px;
+      background-color: transparent;
 
-        >div {
-            color: white;
-            display: flex;
-            gap: 5px;
-            padding: 3px 6px;
-            border: 1px solid rgb(61 207 182);
-            border-radius: 100px;
-            background-color: transparent;
-            
-            >button {
-                height: 100%;
-                border-radius: 100px;
-                color: white;
-                background-color: transparent;
-                border-color: transparent;
-                cursor: pointer;
-                //hier stimmt so einiges nicht :)
-            }
-        }
-
-        >a {
-            font-family: 'Fira Code';
-        }
+      > button {
+        height: 100%;
+        border-radius: 100px;
+        color: white;
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+      }
     }
 
+    > a {
+      font-family: "Fira Code";
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 26.24px;
+      letter-spacing: -0.03em;
+      transition: all 125ms ease-in-out;
+
+      &:hover {
+        color: rgb(61 207 182);
+      }
+    }
+  }
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
-  
+
+.dot-hover {
+  position: relative;
+}
+
+.dot-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: all 125ms ease-in-out;
+  opacity: 0;
+}
+
+.dot-hover:hover::after {
+  background-color: rgb(61 207 182);
+  opacity: 1;
+}
