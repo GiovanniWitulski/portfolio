@@ -1,42 +1,73 @@
 <section>
-    <div class="skill-set-parant-container">
-        <p>Technologies</p>
-        <div class="skill-set-container">
-            <h1>Skill Set</h1>
-            <span>
-                My journey has involved working on diverse projects, 
-                employing a range of frontend technologies and concepts. 
-                I am open to embracing new technologies and methodologies to Continously 
-                enhance my skills and stay ahead in the ever-evolving landscape of web development.
-            </span>
-            <h2>You need <b>another skill?</b></h2>
-            <span>
-                Feel free to contact me. 
-                I look forward to expanding on my previous knowledge.
-            </span>
-            <a href="#contact">Lets Talk</a>
-        </div>
+  <div class="skill-set-parant-container">
+    <p>
+      {{
+        languageService.selectedLanguage === "de"
+          ? "Technologien"
+          : "Technologies"
+      }}
+    </p>
+    <div class="skill-set-container">
+      <h1>Skill Set</h1>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Meine Reise umfasste bisher die Arbeit an vielfältigen Projekten, bei denen ich eine Reihe von Frontend-Technologien und -Konzepten eingesetzt habe. Ich bin offen dafür, neue Technologien und Methoden anzuwenden, um meine Fähigkeiten kontinuierlich zu erweitern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung immer einen Schritt voraus zu sein."
+            : "My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development."
+        }}
+      </span>
+      <h2>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Benötigen Sie eine"
+            : "You need"
+        }}
+        <b>
+          {{
+            languageService.selectedLanguage === "de"
+              ? "zusätzliche Fertigkeit?"
+              : "another skill?"
+          }}</b
+        >
+      </h2>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Zögern Sie nicht, mich zu kontaktieren! Ich bin gespannt darauf, mehr zu lernen und mein bisheriges Wissen auszubauen"
+            : "Feel free to contact me. I look forward to expanding on my previous knowledge."
+        }}
+      </span>
+      <button>
+        <a href="#contact"> Lets Talk</a>
+      </button>
+      <div class="decoration"></div>
     </div>
-
-    <div class="skill-icons-container">
-        <div *ngFor="let icon of icons">
-            <img loading="lazy" [src]="icon.src" [alt]="icon.name">
-            <div class="speech-bubble" *ngIf="icon.name === 'Growth mindset'">
-                <div>
-                    <span>I have a special interest in learning</span>
-                    <div>
-                        <div>
-                            <img src="icon/python.png" alt="Python">
-                            <span>Python</span>
-                        </div>
-                        <div>
-                            <img src="icon/django.png" alt="Django">
-                            <span>Django</span>
-                        </div>
-                    </div>
-                </div>
+  </div>
+  <div class="skill-icons-container">
+    <div *ngFor="let icon of icons">
+      <img loading="lazy" [src]="icon.src" [alt]="icon.name" />
+      <div class="speech-bubble" *ngIf="icon.name === 'Growth mindset'">
+        <div>
+          <span>
+            {{
+              languageService.selectedLanguage === "de"
+                ? "Ich habe großes Interesse an"
+                : "I have a special interest in learning"
+            }}</span
+          >
+          <div>
+            <div>
+              <img src="icon/python.png" alt="Python" />
+              <span>Python</span>
             </div>
-            <span class="growth-mindset-text">{{ icon.name }}</span>
+            <div>
+              <img src="icon/django.png" alt="Django" />
+              <span>Django</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <span class="growth-mindset-text">{{ icon.name }}</span>
     </div>
+  </div>
 </section>

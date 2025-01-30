@@ -1,42 +1,59 @@
 <section>
-    <div class="img-container">
-        <img src="img/skyrim-map.jpg" alt="">
-        <img class="img-background" src="img/img-background.png" alt="">
-    </div>
-    <div class="right-container">
-        <p>Who I Am</p>
-        <div class="about-me-container">
-            <h1>About me</h1>
-            <span>
-                Hi, I'm a german speaking Frontend Developer based in Munich. 
-                Motivated by the limitless opportunities within IT, 
-                I am excited about crafting visually captivating and intuitive websites and applications.
-            </span>
-            <div>
-                <div>
-                    <img src="icon/location.png" alt="">
-                    <span>
-                        Flexible in terms of working environments, 
-                        I can work effectively both on-site in Munich and remotely.
-                    </span>
-                </div>
-                <div>
-                    <img src="icon/cognition.png" alt="">
-                    <span>
-                        I am open-minded and always looking for personal challenges 
-                        to constantly improve my knowledge and skills.
-                    </span>
-                </div>
-                <div>
-                    <img src="icon/property.png" alt="">
-                    <span>
-                        In my profession, programming isn't just about writing code; 
-                        it's a creative form of problem-solving. 
-                        I take pride in my ability to distill complex technical challenges into simple, 
-                        user-friendly solutions. This way, I help you achieve your goals and bring your visions to life.
-                    </span>
-                </div>
-            </div>
+  <div class="img-container">
+    <img src="img/skyrim-map.jpg" alt="" />
+    <img class="img-background" src="img/img-background.png" alt="" />
+  </div>
+  <div class="right-container">
+    <p>
+      {{
+        languageService.selectedLanguage === "de" ? "Wer ich bin" : "Who I Am"
+      }}
+    </p>
+    <div class="about-me-container">
+      <h1>
+        {{
+          languageService.selectedLanguage === "de" ? "Über mich" : "About me"
+        }}
+      </h1>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Hi, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in der nähe von Landsberg am lech. Motiviert durch die grenzenlosen Möglichkeiten in der IT, bin ich begeistert davon, visuell ansprechende und intuitive Websites und Anwendungen zu erstellen."
+            : "Hi, I'm a german speaking frontend-developer based near Landsberg am Lech. Motivated by the limitless opportunities within IT, I'm excited to create visually appealing and intuitive websites and applications."
+        }}
+      </span>
+      <div>
+        <div>
+          <img src="icon/location.png" alt="" />
+          <span>
+            {{
+              languageService.selectedLanguage === "de"
+                ? "Flexibel in Bezug auf die Arbeitsumgebung, kann ich sowohl vor Ort in Landsberg am Lech als auch remote effektiv arbeiten."
+                : "Flexible in terms of working environments, I can work effectively both on-site in Landsberg am Lech and remotely."
+            }}
+          </span>
         </div>
+        <div>
+          <img src="icon/cognition.png" alt="" />
+          <span>
+            {{
+              languageService.selectedLanguage === "de"
+                ? "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten stetig zu verbessern."
+                : "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills."
+            }}
+          </span>
+        </div>
+        <div>
+          <img src="icon/property.png" alt="" />
+          <span>
+            {{
+              languageService.selectedLanguage === "de"
+                ? "In meiner Tätigkeit geht es beim Programmieren nicht nur darum, Code zu schreiben; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu überführen. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
+                : "In my profession, programming isn't just about writing code; it's a creative form of problem-solving. I take pride in my ability to distill complex technical challenges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life."
+            }}
+          </span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

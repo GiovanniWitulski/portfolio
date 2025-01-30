@@ -1,12 +1,63 @@
 <nav>
-  <div (click)="changeLanguage()">
+  <div class="navbar-content-container">
     <div>
-      <button>EN</button>
-      <button>DE</button>
+      <div class="language-selector">
+        <button
+          [class.active]="languageService.selectedLanguage === 'en'"
+          (click)="changeLanguage('en')"
+        >
+          EN
+        </button>
+        <button
+          [class.active]="languageService.selectedLanguage === 'de'"
+          (click)="changeLanguage('de')"
+        >
+          DE
+        </button>
+      </div>
+      <a class="dot-hover" href="#aboutMe">{{
+        languageService.selectedLanguage === "de" ? "Über mich" : "About me"
+      }}</a>
+      <a class="dot-hover" href="#mySkills">Skills</a>
+      <a class="dot-hover" href="#portfolio">{{
+        languageService.selectedLanguage === "de" ? "Projekte" : "Projects"
+      }}</a>
     </div>
-    <a class="dot-hover" href="#aboutMe">About me</a>
-    <a class="dot-hover" href="#mySkills">Skills</a>
-    <a class="dot-hover" href="#portfolio">Projects</a>
+    <a href="#"><b>G</b>iovanni<br /><b>W</b>itulski</a>
   </div>
+</nav>
+
+<nav class="mobile">
   <a href="#"><b>G</b>iovanni<br /><b>W</b>itulski</a>
+  <div>
+    <img
+      src="icon/burger-menu-icon.png"
+      alt="burger-menu-icon"
+      (click)="toggleMenu()"
+    />
+    <div (click)="closeMenu()" [class.overlay-container]="showMenu"></div>
+    <div class="burger-menu" [class.show]="showMenu">
+      <a href="#aboutMe" (click)="closeMenu()">{{
+        languageService.selectedLanguage === "de" ? "Über mich" : "About me"
+      }}</a>
+      <a href="#mySkills" (click)="closeMenu()">Skills</a>
+      <a href="#portfolio" (click)="closeMenu()">{{
+        languageService.selectedLanguage === "de" ? "Projekte" : "Projects"
+      }}</a>
+      <div class="language-selector">
+        <button
+          [class.active]="languageService.selectedLanguage === 'en'"
+          (click)="changeLanguage('en')"
+        >
+          EN
+        </button>
+        <button
+          [class.active]="languageService.selectedLanguage === 'de'"
+          (click)="changeLanguage('de')"
+        >
+          DE
+        </button>
+      </div>
+    </div>
+  </div>
 </nav>

@@ -1,50 +1,91 @@
 section {
-    padding: 0 96px 144px 96px;
-    background-color: rgb(28, 28, 28);
-    display: flex;
-    justify-content: space-between;
-    gap: 64px;
+  padding: 72px 96px;
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  width: 100%;
+
+  div {
+    width: 50%;
+    color: white;
+
+    > p {
+      font-family: "Karla";
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28.06px;
+      color: rgb(61, 207, 182);
+      margin-bottom: 20px;
+    }
+
+    > h1 {
+      font-family: "Fira Code";
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: -0.03em;
+      color: rgb(61, 207, 182);
+      margin-bottom: 40px;
+    }
+
+    > span {
+      font-family: "Karla";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+
+      > span {
+        font-weight: 700;
+        color: rgb(61, 207, 182);
+      }
+    }
+  }
+
+  > app-contactform {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1020px) {
+  section {
+    flex-direction: column;
+    gap: 40px;
     width: 100%;
+
     div {
-        width: 50%;
-        color: white;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-
-        >p {
-            font-family: 'Karla';
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 28.06px;
-            color: rgb(61, 207, 182);
-            margin-bottom: 20px;
-        }
-
-        >h1 {
-            font-family: 'Fira Code';
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 64px;
-            letter-spacing: -0.03em;
-            color: rgb(61, 207, 182);
-            margin-bottom: 40px;
-        }
-
-        >span {
-            font-family: 'Karla';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19.2px;
-
-            >span {
-                font-weight: 700;
-                color: rgb(61, 207, 182);
-            }
-        }
+      width: 100%;
     }
 
-    >app-contactform {
-        width: 50%;
+    > app-contactform {
+      width: 100%;
     }
+  }
+}
+
+@media (max-width: 750px) {
+  section {
+    padding: 50px 16px;
+
+    div {
+      > p {
+        font-size: 18px;
+        line-height: 21.04px;
+      }
+
+      > h1 {
+        font-size: 56px;
+        line-height: 56px;
+      }
+    }
+
+    > app-contactform {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  section > div > h1 {
+    font-size: 42px;
+  }
 }

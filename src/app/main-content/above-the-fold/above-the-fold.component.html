@@ -1,31 +1,68 @@
 <section>
-  <div class="next-section-arrow">
-    <a href="#aboutMe"><img src="icon/arrow-down.png" alt="" /></a>
-    <div></div>
-  </div>
-  <div class="name-and-btns">
-    <h1>Frontend Developer</h1>
-    <h2>Giovanni Witulski</h2>
-    <div>
-      <a href="#portfolio">Check my work</a>
-      <a href="#contact">Contact me</a>
+  <div class="abov-the-fold-content-container">
+    <div class="next-section-arrow">
+      <a href="#aboutMe"><img src="icon/arrow-down.png" alt="" /></a>
+      <div></div>
     </div>
-  </div>
-  <div class="social-media-links">
-    <div class="email">
-      <a class="email" href="#contact">Developer&#64;Giovanni-Witulski.com</a>
+    <div class="name-and-btns">
+      <h1>Frontend Developer</h1>
+      <h2>Giovanni Witulski</h2>
+      <div>
+        <button>
+          <a href="#portfolio">{{
+            languageService.selectedLanguage === "de"
+              ? "Meine Arbeit"
+              : "Check my work"
+          }}</a>
+        </button>
+        <button>
+          <a href="#contact">{{
+            languageService.selectedLanguage === "de" ? "Kantakt" : "Contact me"
+          }}</a>
+        </button>
+      </div>
     </div>
-    <a class="dot-hover" href="#"><img src="icon/github.png" alt="" /></a>
-    <a class="dot-hover" href="#"><img src="icon/linkedin.png" alt="" /></a>
-    <div></div>
-  </div>
+    <div class="social-media-links">
+      <div class="email">
+        <a class="email" href="mailto:developer@giovanni-witulski.com"
+          >Developer&#64;Giovanni-Witulski.com</a
+        >
+      </div>
+      <a
+        class="dot-hover mobile-email"
+        href="mailto:developer@giovanni-witulski.com"
+        ><img src="icon/mail.png" alt=""
+      /></a>
+      <a
+        class="dot-hover"
+        target="_blank"
+        href="https://github.com/GiovanniWitulski"
+        ><img src="icon/github.png" alt=""
+      /></a>
+      <a
+        class="dot-hover"
+        target="_blank"
+        href="https://www.linkedin.com/in/giovanni-witulski-88576b346/"
+        ><img src="icon/linkedin.png" alt=""
+      /></a>
+      <div></div>
+    </div>
 
-  <div class="hide-animation-overflow-container">
-    <div class="text-animation-container">
-      <div class="text-animation">
-        <span *ngFor="let text of texts">{{ text }}</span>
-        <span *ngFor="let text of texts">{{ text }}</span>
+    <div class="hide-animation-overflow-container">
+      <div class="text-animation-container">
+        <div class="text-animation">
+          <span *ngFor="let text of texts; let i = index">
+            {{
+              languageService.selectedLanguage === "de" ? textsDe[i] : text
+            }}</span
+          >
+          <span *ngFor="let text of texts; let i = index">{{
+            languageService.selectedLanguage === "de" ? textsDe[i] : text
+          }}</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<app-above-the-fold-mobile></app-above-the-fold-mobile>

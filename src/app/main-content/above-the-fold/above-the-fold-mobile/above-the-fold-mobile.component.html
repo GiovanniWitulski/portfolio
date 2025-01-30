@@ -1,0 +1,50 @@
+<section>
+  <div class="name-and-btns">
+    <h1>Frontend Developer</h1>
+    <h2>Giovanni Witulski</h2>
+    <div>
+      <a href="#portfolio">{{
+        languageService.selectedLanguage === "de"
+          ? "Meine Arbeit"
+          : "Check my work"
+      }}</a>
+      <a href="#contact">{{
+        languageService.selectedLanguage === "de" ? "Kontakt" : "Contact me"
+      }}</a>
+    </div>
+  </div>
+
+  <div class="links-container">
+    <div class="next-section-arrow">
+      <a href="#aboutMe"><img src="icon/arrow-down.png" alt="" /></a>
+      <div></div>
+    </div>
+    <div class="social-media-links">
+      <a class="dot-hover mobile-email" href="#"
+        ><img src="icon/mail.png" alt=""
+      /></a>
+      <a
+        class="dot-hover"
+        target="_blank"
+        href="https://github.com/WitulskiGiovanni"
+        ><img src="icon/github.png" alt=""
+      /></a>
+      <a
+        class="dot-hover"
+        target="_blank"
+        href="https://www.linkedin.com/in/giovanni-witulski-88576b346/"
+        ><img src="icon/linkedin.png" alt=""
+      /></a>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="hide-animation-overflow-container">
+    <div class="text-animation-container">
+      <div class="text-animation">
+        <span *ngFor="let text of texts">{{ text }}</span>
+        <span *ngFor="let text of texts">{{ text }}</span>
+      </div>
+    </div>
+  </div>
+</section>

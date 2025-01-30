@@ -1,17 +1,42 @@
 <section>
   <p>Portfolio</p>
-  <h1>Featured Projects</h1>
+  <h1>
+    {{
+      languageService.selectedLanguage === "de"
+        ? "Präsentierte Projekte"
+        : "Featured Projects"
+    }}
+  </h1>
   <span>
-    Explore a selection of my work here - Interact with <br />
-    projects to see my skills in action.
+    {{
+      languageService.selectedLanguage === "de"
+        ? "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit"
+        : "Explore a selection of my work here - Interact with"
+    }}
+    <br />
+    {{
+      languageService.selectedLanguage === "de"
+        ? "Projekten, um meine Fähigkeiten in Aktion zu sehen."
+        : "projects to see my skills in action."
+    }}
   </span>
-  <div>
+  <div class="project-cards-container">
     <app-project-card
       *ngFor="let project of projects; let i = index"
       [project]="project"
       [openedCardIndex]="openedCardIndex"
       (cardOpened)="openCard(i)"
       (cardClosed)="closeCard()"
+      (nextButtonClicked)="nextProject()"
     ></app-project-card>
+
+    <app-project-card-mobile
+      *ngFor="let project of projects; let i = index"
+      [project]="project"
+      [openedCardIndex]="openedCardIndex"
+      (cardOpenedMobile)="openCardMobile(i)"
+      (cardClosedMobile)="closeCardMobile()"
+      (nextButtonClickedMobile)="nextProjectMobile()"
+    ></app-project-card-mobile>
   </div>
 </section>

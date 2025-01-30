@@ -1,1 +1,140 @@
-<p>imprint works!</p>
+<section>
+  <div class="imprint">
+    <h1>
+      {{ languageService.selectedLanguage === "de" ? "Impressum" : "Imprint" }}
+    </h1>
+    <span>
+      <p>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Angaben gemäß § 5 DDG"
+            : "Information according to § 5 DDG (German Digital Services Act)"
+        }}
+      </p>
+      <p>
+        Giovanni Witulski<br />
+        Himmelbach, 4<br />
+        86925 Fuchstal<br />
+        {{ languageService.selectedLanguage === "de" ? "" : "Germany" }}
+      </p>
+
+      <h3 class="inner-imprint-title">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Vertreten durch:"
+            : "Represented by:"
+        }}
+      </h3>
+      <p>Giovanni Witulski</p>
+
+      <h3 class="inner-imprint-title">
+        {{
+          languageService.selectedLanguage === "de" ? "Kontakt:" : "Contact:"
+        }}
+      </h3>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Telefon: +49-15153680611"
+            : "Phone: +49-15153680611"
+        }}
+        <br />
+        E-Mail:
+        <a href="mailto:info@giovanni-witulski.com"
+          >info&#64;giovanni-witulski.com</a
+        >
+      </span>
+    </span>
+
+    <h2>
+      {{
+        languageService.selectedLanguage === "de"
+          ? "Haftungsausschluss:"
+          : "Disclaimer:"
+      }}
+    </h2>
+    <span>
+      <h3>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Haftung für Inhalte"
+            : "Liability for Content"
+        }}
+      </h3>
+
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
+            : "The contents of our pages were created with the utmost care. However, we cannot guarantee the accuracy, completeness, and timeliness of the content. As a service provider, we are responsible for our own content on these pages according to § 7 para.1 DDG and general laws. According to §§ 8 to 10 DDG, we are not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the time we become aware of a specific legal violation. Upon becoming aware of such legal violations, we will remove this content immediately."
+        }}
+      </span>
+      <!-- </span> -->
+
+      <!-- <span> -->
+      <h3 class="mt-h3">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Haftung für Links"
+            : "Liability for Links"
+        }}
+      </h3>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+            : "Our offer contains links to external websites of third parties, over whose content we have no influence. Therefore, we cannot assume any liability for this external content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of a legal violation. Upon becoming aware of legal violations, we will remove such links immediately."
+        }}
+      </span>
+      <!-- </span> -->
+
+      <!-- <span> -->
+      <h3 class="mt-h3">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Urheberrecht"
+            : "Copyright"
+        }}
+      </h3>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
+            : "The content and works created by the site operators on these pages are subject to German copyright law. The reproduction, processing, distribution, and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of legal violations, we will remove such content immediately."
+        }}
+      </span>
+      <!-- </span> -->
+
+      <!-- <span> -->
+      <h3 class="mt-h3">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Datenschutz"
+            : "Data Protection"
+        }}
+      </h3>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor."
+            : "The use of our website is usually possible without providing personal data. Insofar as personal data (e.g., name, address, or email addresses) is collected on our pages, this is done, as far as possible, on a voluntary basis. This data will not be passed on to third parties without your express consent.  We would like to point out that data transmission over the Internet (e.g., communication by email) can have security gaps. Complete protection of data against access by third parties is not possible.  The use of contact data published within the scope of the imprint obligation by third parties for sending unsolicited advertising and information materials is hereby expressly prohibited. The operators of the pages expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, such as spam emails."
+        }}
+      </span>
+    </span>
+
+    <span class="created-by">
+      {{
+        languageService.selectedLanguage === "de"
+          ? "Website Impressum erstellt durch"
+          : "Website Imprint created by"
+      }}
+
+      <a href="https://www.impressum-generator.de">impressum-generator.de</a>
+      {{ languageService.selectedLanguage === "de" ? "von der" : "from" }}
+
+      <a href="https://www.kanzlei-hasselbach.de/" rel="nofollow"
+        >Kanzlei Hasselbach</a
+      >
+    </span>
+  </div>
+</section>

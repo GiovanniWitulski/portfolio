@@ -1,14 +1,39 @@
 <section>
-  <div>
-    <span class="logo">Giovanni<br />Witulski</span>
-    <span>Web Developer<br />Munich Germany</span>
-  </div>
-  <p>Giovanni Witulski 2024</p>
-  <div>
-    <a class="dot-hover" href="#">GitHub</a>
-    <a class="dot-hover" href="#">LinkedIn</a>
-    <a class="dot-hover" href="#">Email</a>
-    <a class="dot-hover" href="#">Legal Notice</a>
+  <div class="footer-content-container">
+    <div>
+      <a class="logo" href="#"><b>G</b>iovanni<br /><b>W</b>itulski</a>
+      <span>
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Web Entwickler"
+            : "Web Developer"
+        }}<br />Landsberg am Lech</span
+      >
+    </div>
+    <p>© Giovanni Witulski 2024</p>
+    <div>
+      <a
+        class="dot-hover"
+        target="_blank"
+        href="https://github.com/GiovanniWitulski"
+        >GitHub</a
+      >
+      <a
+        class="dot-hover"
+        target="_blank"
+        href="https://www.linkedin.com/in/giovanni-witulski-88576b346/"
+        >LinkedIn</a
+      >
+      <a class="dot-hover" href="mailto:developer@giovanni-witulski.com"
+        >Email</a
+      >
+      <a class="dot-hover" href="imprint">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Impressum"
+            : "Legal Notice"
+        }}</a
+      >
+    </div>
   </div>
 </section>
-<!-- <app-imprint></app-imprint> -->

@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { ImprintComponent } from '../imprint/imprint.component';
+import { LanguageService } from '../../services/language-service/language.service';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [
-    ImprintComponent
-  ],
+  imports: [],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-
+  constructor(public languageService: LanguageService) {}
 }

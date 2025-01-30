@@ -1,66 +1,13 @@
-<!-- <div>
-  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <div>
-      <label for="name">What's your name?</label>
-      <input
-        [(ngModel)]="contactData.name"
-        id="name"
-        type="text"
-        name="name"
-        placeholder="Your name goes here"
-        required
-      />
-    </div>
-    <div>
-      <label for="email">What's your email?</label>
-      <input
-        [(ngModel)]="contactData.email"
-        id="email"
-        type="text"
-        name="email"
-        placeholder="youremail@email.com"
-        required
-        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-      />
-    </div>
-    <div>
-      <label for="massage">How can I help you?</label>
-      <textarea
-        #massage="ngModel"
-        [(ngModel)]="contactData.message"
-        minlength="4"
-        id="massage"
-        name="massage"
-        placeholder="Hello Giovanni, I am interested in..."
-        required
-      ></textarea>
-      @if (!massage.valid && massage.touched) {
-      
-      }
-    </div>
-    <div class="checkbox-container">
-      <input
-        type="checkbox"
-        id="privacyPolicy"
-        name="privacyPolicy"
-        [(ngModel)]="privacyPolicyChecked"
-        required
-      />
-      <label for="privacyPolicy"
-        >I've read the <a href="#">Privacy Policy</a> and agree to the
-        processing of my data as outlined.</label
-      >
-    </div>
-    <div class="submit-btn-container">
-      <input type="submit" value="Say Hello ;)" />
-    </div>
-  </form>
-</div> -->
-
 <div>
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     <div>
-      <label for="name">What's your name?</label>
+      <label for="name">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Wie lautet Ihr Name?"
+            : "What's your name?"
+        }}</label
+      >
       <input
         #name="ngModel"
         [(ngModel)]="contactData.name"
@@ -71,12 +18,23 @@
         [placeholder]="
           name.touched && !name.valid ? nameErrorText : namePlaceholder
         "
-        [style.color]="name.touched && !name.valid ? 'red' : 'white'"
+        [class.error-color]="name.touched && !name.valid"
+        [style.color]="
+          name.touched && !name.valid ? 'rgba(236, 123, 123, 0.8)' : 'white'
+        "
         required
       />
     </div>
     <div>
-      <label for="email">What's your email?</label>
+      <label for="email">
+        <label for="name">
+          {{
+            languageService.selectedLanguage === "de"
+              ? "Wie lautet Ihre Email"
+              : "What's your email?"
+          }}</label
+        ></label
+      >
       <input
         #email="ngModel"
         [(ngModel)]="contactData.email"
@@ -86,13 +44,22 @@
         [placeholder]="
           email.touched && !email.valid ? emailErrorText : emailPlaceholder
         "
-        [style.color]="email.touched && !email.valid ? 'red' : 'white'"
+        [class.error-color]="email.touched && !email.valid"
+        [style.color]="
+          email.touched && !email.valid ? 'rgba(236, 123, 123, 0.8)' : 'white'
+        "
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
     </div>
     <div>
-      <label for="massage">How can I help you?</label>
+      <label for="massage">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Wie kann ich Ihnen helfen?"
+            : "How can I help you?"
+        }}
+      </label>
       <textarea
         #massage="ngModel"
         [(ngModel)]="contactData.message"
@@ -104,25 +71,71 @@
             ? messageErrorText
             : messagePlaceholder
         "
-        [style.color]="massage.touched && !massage.valid ? 'red' : 'white'"
+        [class.error-color]="massage.touched && !massage.valid"
+        [style.color]="
+          massage.touched && !massage.valid
+            ? 'rgba(236, 123, 123, 0.8)'
+            : 'white'
+        "
         required
       ></textarea>
     </div>
     <div class="checkbox-container">
       <input
+        #privacyPolicy="ngModel"
         type="checkbox"
         id="privacyPolicy"
         name="privacyPolicy"
         [(ngModel)]="privacyPolicyChecked"
         required
       />
-      <label for="privacyPolicy"
-        >I've read the <a href="#">Privacy Policy</a> and agree to the
-        processing of my data as outlined.</label
-      >
+      <label for="privacyPolicy">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Ich habe die "
+            : "I've read the "
+        }}
+        <a href="privacy-policy">
+          {{
+            languageService.selectedLanguage === "de"
+              ? "Datenschutzbestimmungen "
+              : "Privacy Policy "
+          }}</a
+        >
+        {{
+          languageService.selectedLanguage === "de"
+            ? "gelesen und willige in die Verarbeitung meiner Daten gemäß den aufgeführten Bestimmungen ein."
+            : "and agree to the processing of my data as outlined."
+        }}
+      </label>
     </div>
+    <p
+      [class.privacy-policy-error-text-aktive]="
+        (privacyPolicy.touched && !privacyPolicy.valid) ||
+        (contactForm.submitted && !privacyPolicy.valid)
+      "
+      class="privacy-policy-error-text"
+    >
+      {{
+        languageService.selectedLanguage === "de"
+          ? "Bitte Akzeptieren Sie die Datenschutzbestimmungen."
+          : "Please accept the privacy policy."
+      }}
+    </p>
     <div class="submit-btn-container">
-      <input type="submit" value="Say Hello ;)" />
+      <button
+        [class.submit-btn-aktive]="contactForm.valid"
+        class="submit-btn"
+        type="submit"
+      >
+        <p>
+          {{
+            languageService.selectedLanguage === "de"
+              ? "Sagen Sie Hallo ;)"
+              : "Say Hello ;)"
+          }}
+        </p>
+      </button>
     </div>
   </form>
 </div>

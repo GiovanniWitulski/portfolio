@@ -1,0 +1,97 @@
+<div class="card" (click)="openCardMobile()">
+  <div class="card-content-container">
+    <div>
+      <h2>{{ project.title }}</h2>
+      <img
+        class="arrow-outward"
+        src="icon/arrow-outward.png"
+        alt="Arrow outward"
+      />
+    </div>
+    <span>
+      <span *ngFor="let tech of project.technologies; let i = index">
+        {{ tech.name }}
+        <span *ngIf="i < project.technologies.length - 1">|</span>
+      </span>
+    </span>
+  </div>
+
+  <div class="project-img-container">
+    <img
+      [class.no-project-img]="project.imageUrl === 'icon/ban-solid.svg'"
+      class="project-img"
+      src="{{ project.imageUrl }}"
+      alt="{{ project.title + ' image' }}"
+    />
+
+    <img
+      *ngIf="project.imageUrl != 'icon/ban-solid.svg'"
+      class="background-img"
+      src="img/img-background.png"
+      alt=""
+    />
+  </div>
+</div>
+
+<div
+  class="overlay-container"
+  *ngIf="showContainer && openedCardIndex !== null"
+>
+  <div class="container-content">
+    <div class="close-icon-container">
+      <img src="icon/x.png" alt="" (click)="closeContainerMobile()" />
+    </div>
+    <div class="open-card-img-container">
+      <img src="{{ project.imageUrl }}" alt="" />
+    </div>
+    <h1>0{{ openedCardIndex + 1 }}</h1>
+    <h2>{{ project.title }}</h2>
+    <p>
+      {{
+        languageService.selectedLanguage === "de"
+          ? "Worum geht es in diesem Projekt?"
+          : "What is this project about?"
+      }}
+    </p>
+    <span>
+      {{
+        languageService.selectedLanguage === "de"
+          ? project.descriptionDe
+          : project.description
+      }}</span
+    >
+    <div class="technologies-container">
+      <div *ngFor="let tech of project.technologies; let i = index">
+        <img src="{{ tech.imgSrc }}" alt="{{ tech.name }}" />
+        <span>{{ tech.name }}</span>
+      </div>
+    </div>
+    <div class="btns-container">
+      <a
+        [class.in-development]="project.inDevelopment"
+        target="_blank"
+        href="{{ project.gitHubLink }}"
+        >GitHub <img src="icon/arrow-outward-colored.png" alt=""
+      /></a>
+      <a
+        [class.in-development]="project.inDevelopment"
+        target="_blank"
+        href="{{ project.liveDemoLink }}"
+        >Live Test <img src="icon/arrow-outward-colored.png" alt=""
+      /></a>
+      <p class="coming-soon-text" *ngIf="project.inDevelopment">
+        Coming soon..
+      </p>
+    </div>
+    <div class="next-btn-container">
+      <button (click)="nextProjectMobile()">
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Nächtes Projekt"
+            : "Next project"
+        }}
+        <img src="icon/arrow-forward-colored.png" alt="" />
+      </button>
+    </div>
+  </div>
+</div>

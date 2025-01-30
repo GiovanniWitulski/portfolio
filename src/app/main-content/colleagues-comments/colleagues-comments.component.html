@@ -1,0 +1,61 @@
+<section>
+  <h1>
+    {{
+      languageService.selectedLanguage === "de"
+        ? "Was meine Kollegen über mich sagen"
+        : "What my colleagues say about me"
+    }}
+  </h1>
+
+  <div class="slider-container">
+    <div
+      class="testimonials-wrapper"
+      [style.transform]="'translateX(' + -translateX + 'px)'"
+      #testimonialsWrapper
+    >
+      <span
+        *ngFor="let testimonial of testimonials; let i = index"
+        [class.active]="i === currentIndex"
+        [class.notActive]="i != currentIndex"
+      >
+        <img class="quotes-icon" src="icon/quotes.png" alt="" />
+        <span class="quote">
+          {{
+            languageService.selectedLanguage === "de"
+              ? testimonial.quoteDe
+              : testimonial.quote
+          }}
+        </span>
+        <div>
+          <div class="horizontal-line"></div>
+          <span class="author">
+            {{ testimonial.author }} - {{ testimonial.role }}</span
+          >
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="fade-overlay"></div>
+
+  <div class="arrows-container">
+    <img
+      class="arrow-back"
+      (click)="prevSlide()"
+      src="icon/arrow-back.png"
+      alt="arrow back"
+    />
+    <div>
+      <span
+        *ngFor="let testimonial of testimonials; let i = index"
+        [class.active-dot]="i === currentIndex"
+        >•</span
+      >
+    </div>
+    <img
+      class="arrow-forward"
+      (click)="nextSlide()"
+      src="icon/arrow-forward.png"
+      alt="arrow forward"
+    />
+  </div>
+</section>
