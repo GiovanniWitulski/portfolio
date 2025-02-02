@@ -8,18 +8,24 @@
       <h1>Frontend Developer</h1>
       <h2>Giovanni Witulski</h2>
       <div>
-        <button>
-          <a href="#portfolio">{{
-            languageService.selectedLanguage === "de"
-              ? "Meine Arbeit"
-              : "Check my work"
-          }}</a>
-        </button>
-        <button>
-          <a href="#contact">{{
-            languageService.selectedLanguage === "de" ? "Kantakt" : "Contact me"
-          }}</a>
-        </button>
+        <a href="#portfolio">
+          <p>
+            {{
+              languageService.selectedLanguage === "de"
+                ? "Meine Arbeit"
+                : "Check my work"
+            }}
+          </p>
+        </a>
+        <a href="#contact">
+          <p>
+            {{
+              languageService.selectedLanguage === "de"
+                ? "Kantakt"
+                : "Contact me"
+            }}
+          </p>
+        </a>
       </div>
     </div>
     <div class="social-media-links">

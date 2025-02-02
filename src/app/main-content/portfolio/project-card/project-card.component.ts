@@ -31,7 +31,7 @@ export class ProjectCardComponent implements OnInit {
     this.cardOpened.emit();
   }
 
-  closeContainer() {
+  closeCard() {
     this.showContainer = false;
     this.cardClosed.emit();
   }

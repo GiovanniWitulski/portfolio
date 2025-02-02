@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { AboveTheFoldMobileComponent } from './above-the-fold-mobile/above-the-fold-mobile.component';
 import { SlidingTextsService } from '../../services/sliding-texts/sliding-texts.service';
 import { LanguageService } from '../../services/language-service/language.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-above-the-fold',

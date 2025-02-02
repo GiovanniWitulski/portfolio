@@ -1,10 +1,11 @@
 import { Component, HostListener, ElementRef } from '@angular/core';
 import { LanguageService } from '../../services/language-service/language.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -33,5 +34,9 @@ export class NavbarComponent {
     if (!this.eRef.nativeElement.contains(event.target) && this.showMenu) {
       this.closeMenu();
     }
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 }

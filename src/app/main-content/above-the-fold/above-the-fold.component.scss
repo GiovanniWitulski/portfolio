@@ -104,16 +104,16 @@ section {
     justify-content: space-between;
     gap: 30px;
 
-    > button {
+    > a {
+      padding: 12px 24px;
       border: 1px solid white;
       border-radius: 100px;
-      padding: 12px 24px;
       background-color: transparent;
       transition: all 125ms ease-in-out;
       overflow: hidden;
       cursor: pointer;
 
-      > a {
+      > p {
         font-family: "Karla";
         font-size: 18px;
         font-weight: 400;
@@ -125,7 +125,7 @@ section {
 
       &:hover {
         border-color: rgb(61 207 182);
-        > a {
+        > p {
           color: rgb(61 207 182);
           animation: slideLeft 2s ease-in-out infinite;
           @keyframes slideLeft {

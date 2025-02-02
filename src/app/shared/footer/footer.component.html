@@ -1,7 +1,9 @@
 <section>
   <div class="footer-content-container">
     <div>
-      <a class="logo" href="#"><b>G</b>iovanni<br /><b>W</b>itulski</a>
+      <a class="logo" (click)="scrollToTop()" routerLink="**"
+        ><b>G</b>iovanni<br /><b>W</b>itulski</a
+      >
       <span>
         {{
           languageService.selectedLanguage === "de"
@@ -27,7 +29,7 @@
       <a class="dot-hover" href="mailto:developer@giovanni-witulski.com"
         >Email</a
       >
-      <a class="dot-hover" href="imprint">
+      <a class="dot-hover" (click)="scrollToTop()" routerLink="/imprint">
         {{
           languageService.selectedLanguage === "de"
             ? "Impressum"

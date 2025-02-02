@@ -1,5 +1,5 @@
 <div class="card" (click)="openCard()">
-  <div class="card-content-container">
+  <div class="card-content-container" #cardContent>
     <div>
       <h2>{{ project.title }}</h2>
       <img
@@ -35,8 +35,9 @@
 <div
   class="overlay-container"
   *ngIf="showContainer && openedCardIndex !== null"
+  (click)="closeCard()"
 >
-  <div class="container-content">
+  <div class="container-content" (click)="$event.stopPropagation()">
     <div class="left-container-content">
       <h1>0{{ openedCardIndex + 1 }}</h1>
       <h2>{{ project.title }}</h2>
@@ -80,7 +81,7 @@
     </div>
     <div class="right-container-content">
       <div>
-        <img src="icon/x.png" alt="" (click)="closeContainer()" />
+        <img src="icon/x.png" alt="" (click)="closeCard()" />
       </div>
       <img
         [class.no-project-img]="project.imageUrl === 'icon/ban-solid.svg'"

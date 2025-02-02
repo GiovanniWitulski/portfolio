@@ -69,7 +69,7 @@ section {
     margin-bottom: 30px;
   }
 
-  > button {
+  > a {
     border: 1px solid white;
     width: min-content;
     height: 48px;
@@ -83,7 +83,7 @@ section {
     z-index: 1;
     cursor: pointer;
 
-    > a {
+    > p {
       text-align: center;
       color: white;
       text-decoration: none;
@@ -98,7 +98,7 @@ section {
 
     &:hover {
       border-color: rgb(61 207 182);
-      > a {
+      > p {
         color: rgb(61 207 182);
         animation: slideLeft 2s ease-in-out infinite;
         @keyframes slideLeft {
@@ -267,7 +267,7 @@ section {
 
 @media (max-width: 750px) {
   section {
-    padding: 50px 16px;
+    padding: 80px 16px 20px 16px;
 
     > .skill-set-parant-container {
       gap: 16px;

@@ -4,11 +4,12 @@ import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '../../services/language-service/language.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contactform',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './contactform.component.html',
   styleUrl: './contactform.component.scss',
 })
@@ -71,7 +72,6 @@ export class ContactformComponent implements OnInit, OnDestroy {
     }
   }
 
-  mailTest: boolean = true;
   privacyPolicyChecked: boolean = false;
 
   post = {
@@ -86,12 +86,7 @@ export class ContactformComponent implements OnInit, OnDestroy {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (
-      ngForm.submitted &&
-      ngForm.form.valid &&
-      this.privacyPolicyChecked &&
-      !this.mailTest
-    ) {
+    if (ngForm.submitted && ngForm.form.valid && this.privacyPolicyChecked) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
@@ -103,11 +98,6 @@ export class ContactformComponent implements OnInit, OnDestroy {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.log('hat geklappt');
-      ngForm.resetForm();
-    } else {
-      console.log('nope');
     }
   }
 
@@ -127,5 +117,9 @@ export class ContactformComponent implements OnInit, OnDestroy {
         }
       });
     });
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 }

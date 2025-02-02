@@ -24,16 +24,26 @@
         "
         required
       />
+      <div
+        *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="error-box"
+      >
+        <div *ngIf="name.errors?.['minlength']">
+          {{
+            languageService.selectedLanguage === "de"
+              ? "Der Name muss mindestens 3 Zeichen lang sein."
+              : "Name must be at least 3 characters long."
+          }}
+        </div>
+      </div>
     </div>
     <div>
       <label for="email">
-        <label for="name">
-          {{
-            languageService.selectedLanguage === "de"
-              ? "Wie lautet Ihre Email"
-              : "What's your email?"
-          }}</label
-        ></label
+        {{
+          languageService.selectedLanguage === "de"
+            ? "Wie lautet Ihre Email"
+            : "What's your email?"
+        }}</label
       >
       <input
         #email="ngModel"
@@ -51,6 +61,18 @@
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
+      <div
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="error-box"
+      >
+        <div *ngIf="email.errors?.['pattern']">
+          {{
+            languageService.selectedLanguage === "de"
+              ? "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+              : "Please enter a valid email address."
+          }}
+        </div>
+      </div>
     </div>
     <div>
       <label for="massage">
@@ -79,6 +101,18 @@
         "
         required
       ></textarea>
+      <div
+        *ngIf="massage.invalid && (massage.dirty || massage.touched)"
+        class="error-box"
+      >
+        <div *ngIf="massage.errors?.['minlength']">
+          {{
+            languageService.selectedLanguage === "de"
+              ? "Die Nachricht muss mindestens 4 Zeichen lang sein."
+              : "Message must be at least 4 characters long."
+          }}
+        </div>
+      </div>
     </div>
     <div class="checkbox-container">
       <input
@@ -95,7 +129,7 @@
             ? "Ich habe die "
             : "I've read the "
         }}
-        <a href="privacy-policy">
+        <a (click)="scrollToTop()" routerLink="/privacy-policy">
           {{
             languageService.selectedLanguage === "de"
               ? "Datenschutzbestimmungen "

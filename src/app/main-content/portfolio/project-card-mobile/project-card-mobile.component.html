@@ -36,10 +36,11 @@
 <div
   class="overlay-container"
   *ngIf="showContainer && openedCardIndex !== null"
+  (click)="closeCardMobile()"
 >
-  <div class="container-content">
+  <div class="container-content" (click)="$event.stopPropagation()">
     <div class="close-icon-container">
-      <img src="icon/x.png" alt="" (click)="closeContainerMobile()" />
+      <img src="icon/x.png" alt="" (click)="closeCardMobile()" />
     </div>
     <div class="open-card-img-container">
       <img src="{{ project.imageUrl }}" alt="" />

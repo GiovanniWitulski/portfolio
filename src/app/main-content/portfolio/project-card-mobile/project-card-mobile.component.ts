@@ -31,7 +31,7 @@ export class ProjectCardMobileComponent implements OnInit {
     this.cardOpenedMobile.emit();
   }
 
-  closeContainerMobile() {
+  closeCardMobile() {
     this.showContainer = false;
     this.cardClosedMobile.emit();
   }
