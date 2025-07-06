@@ -1,6 +1,13 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { LanguageService } from '../../services/language-service/language.service';
 import { CommonModule } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-colleagues-comments',
@@ -10,7 +17,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './colleagues-comments.component.scss',
 })
 export class ColleaguesCommentsComponent {
-  constructor(public languageService: LanguageService) {}
+  constructor(
+    public languageService: LanguageService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
   @ViewChild('notActive') notActive!: ElementRef;
   @ViewChild('testimonialsWrapper') testimonialsWrapper!: ElementRef;
 
@@ -63,21 +73,26 @@ export class ColleaguesCommentsComponent {
       (this.quoteWidth() + this.testimonialsWrapperGap());
   }
 
-  quoteWidth() {
-    const quote = document.querySelector('.notActive') as HTMLElement;
-    const quoteWidth = quote.offsetWidth;
-    return quoteWidth;
+  quoteWidth(): number {
+    if (isPlatformBrowser(this.platformId)) {
+      const quote = document.querySelector('.notActive') as HTMLElement;
+      return quote ? quote.offsetWidth : 0;
+    }
+    return 0;
   }
 
-  testimonialsWrapperGap() {
-    let screen = window.innerWidth;
-    if (screen > 750) {
-      return 100;
-    } else {
-      const width = this.testimonialsWrapper.nativeElement.offsetWidth;
-      const gap = width * this.gapInPercent(screen);
-      return gap;
+  testimonialsWrapperGap(): number {
+    if (isPlatformBrowser(this.platformId)) {
+      let screen = window.innerWidth;
+      if (screen > 750) {
+        return 100;
+      } else {
+        const width = this.testimonialsWrapper.nativeElement.offsetWidth;
+        const gap = width * this.gapInPercent(screen);
+        return gap;
+      }
     }
+    return 0;
   }
 
   gapInPercent(screen: number) {

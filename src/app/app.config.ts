@@ -6,7 +6,8 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { firebaseConfig } from '../environments/environment';
 import { provideHttpClient } from '@angular/common/http';
-import { ImprintComponent } from './shared/imprint/imprint.component'; // Pfad anpassen
+import { ImprintComponent } from './shared/imprint/imprint.component';
+import { provideClientHydration } from '@angular/platform-browser'; // Pfad anpassen
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,6 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideHttpClient(),
-    ImprintComponent,
+    ImprintComponent, provideClientHydration(),
   ],
 };

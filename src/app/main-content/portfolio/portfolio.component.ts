@@ -65,14 +65,14 @@ export class PortfolioComponent {
         { name: 'CSS', imgSrc: 'icon/css-small.png' },
         { name: 'Firebase', imgSrc: 'icon/firebase-small.png' },
       ],
-      imageUrl: 'icon/ban-solid.svg',
+      imageUrl: '/img/dabubble.png',
       description:
         'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
       descriptionDe:
         'Diese App ist ein Nachbau von Slack. Mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und durchdachten Kanalstruktur optimiert sie die Kommunikation und Zusammenarbeit in Teams.',
-      liveDemoLink: 'Live Test',
-      gitHubLink: 'GitHub',
-      inDevelopment: true,
+      liveDemoLink: 'https://dabubble.giovanni-witulski.com/',
+      gitHubLink: 'https://github.com/GiovanniWitulski/DABubble',
+      inDevelopment: false,
     },
   ];
 
