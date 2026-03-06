@@ -12,14 +12,16 @@ import { LanguageService } from '../../services/language-service/language.servic
 export class MySkillsComponent {
   constructor(public languageService: LanguageService) {}
   icons = [
+    { src: 'icon/python.png', name: 'Python' },
+    { src: 'icon/django.png', name: 'Django' },
     { src: 'icon/html.png', name: 'HTML' },
     { src: 'icon/css.png', name: 'CSS' },
     { src: 'icon/javascript.png', name: 'JavaScript' },
-    { src: 'icon/material-design.png', name: 'Material Design' },
     { src: 'icon/typescript.png', name: 'TypeScript' },
-    { src: 'icon/angular.png', name: 'Angular' },
-    { src: 'icon/firebase.png', name: 'Firebase' },
+     { src: 'icon/angular.png', name: 'Angular' },
+    { src: 'icon/material-design.png', name: 'Material Design' },
     { src: 'icon/git.png', name: 'GIT' },
+    { src: 'icon/firebase.png', name: 'Firebase' },
     { src: 'icon/rest-api.png', name: 'Rest-Api' },
     { src: 'icon/scrum.png', name: 'Scrum' },
     { src: 'icon/growth-mindset.png', name: 'Growth mindset' },
