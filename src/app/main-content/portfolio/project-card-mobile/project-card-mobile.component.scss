@@ -230,6 +230,7 @@
       > img {
         width: 24px;
         height: 24px;
+        filter: brightness(0) saturate(100%) invert(83%) sepia(20%) saturate(1346%) hue-rotate(110deg) brightness(86%) contrast(86%);
       }
 
       > span {
