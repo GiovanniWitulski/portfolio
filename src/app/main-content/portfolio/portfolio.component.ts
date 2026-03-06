@@ -25,8 +25,7 @@ export class PortfolioComponent {
     {
       title: 'Join',
       technologies: [
-        { name: 'Angular', imgSrc: 'icon/angular-small.png' },
-        { name: 'TypeScript', imgSrc: 'icon/typescript-small.png' },
+        { name: 'JavaScript', imgSrc: 'icon/javascript-small.png' },
         { name: 'HTML', imgSrc: 'icon/html-small.png' },
         { name: 'CSS', imgSrc: 'icon/css-small.png' },
         { name: 'Firebase', imgSrc: 'icon/firebase-small.png' },
@@ -54,6 +53,24 @@ export class PortfolioComponent {
         'Erlebe ein Jump, Run and Throw-Abenteuer, das auf objektorientierter Programmierung basiert. Unterstütze Pepe dabei, Münzen zu sammeln und Tabasco-Salsa zu finden, um das verrückte Huhn zu besiegen.',
       liveDemoLink: 'https://el-pollo-loco.giovanni-witulski.com/',
       gitHubLink: 'https://github.com/GiovanniWitulski/elPolloLoco',
+      inDevelopment: false,
+    },
+    {
+      title: 'Videoflix',
+      technologies: [
+        { name: 'Python', imgSrc: 'icon/python.png' },
+        { name: 'Django', imgSrc: 'icon/django.png' },
+        { name: 'Redis', imgSrc: 'icon/redis.png' },
+        { name: 'PostgreSQL', imgSrc: 'icon/postgresql.png' },
+        { name: 'Docker', imgSrc: 'icon/docker.png' },
+      ],
+      imageUrl: '/img/dabubble.png',
+      description:
+        'Videoflix is a video streaming platform. It serves as a Netflix-clone, handling secure user authentication via HTTP-Only cookies, video management, and adaptive bitrate streaming (HLS) using FFmpeg and Redis.',
+      descriptionDe:
+        'Videoflix ist eine Video-Streaming-Plattform, die als Netflix-Klon konzipiert wurde. Das Projekt umfasst eine sichere Benutzerauthentifizierung über HTTP-Only-Cookies, eine effiziente Videoverwaltung sowie adaptives Bitraten-Streaming (HLS) unter Einsatz von FFmpeg und Redis.',
+      liveDemoLink: 'https://videoflix.giovanni-witulski.com/',
+      gitHubLink: 'https://github.com/GiovanniWitulski/Videoflix',
       inDevelopment: false,
     },
     {
