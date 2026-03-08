@@ -67,8 +67,9 @@
         <span>{{ tech.name }}</span>
       </div>
     </div>
-    <div class="btns-container">
-      <a
+    <div class="three-btns-container">
+      <div class="btns-container">
+        <a
         [class.in-development]="project.inDevelopment"
         target="_blank"
         href="{{ project.gitHubLink }}"
@@ -93,6 +94,7 @@
         }}
         <img src="icon/arrow-forward-colored.png" alt="" />
       </button>
+    </div>
     </div>
   </div>
 </div>
