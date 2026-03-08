@@ -39,9 +39,10 @@
 >
   <div class="container-content" (click)="$event.stopPropagation()">
     <div class="left-container-content">
-      <h1>0{{ openedCardIndex + 1 }}</h1>
-      <h2>{{ project.title }}</h2>
-      <p>
+      <div class="info-container">
+        <h1>0{{ openedCardIndex + 1 }}</h1>
+        <h2>{{ project.title }}</h2>
+        <p>
         {{
           languageService.selectedLanguage === "de"
             ? "Worum geht es in diesem Projekt?"
@@ -55,28 +56,31 @@
             : project.description
         }}</span
       >
-      <div class="technologies-container">
-        <div *ngFor="let tech of project.technologies; let i = index">
-          <img src="{{ tech.imgSrc }}" alt="{{ tech.name }}" />
-          <span>{{ tech.name }}</span>
-        </div>
       </div>
-      <div class="btns-container">
-        <a
-          [class.in-development]="project.inDevelopment"
-          target="_blank"
-          href="{{ project.gitHubLink }}"
-          >GitHub <img src="icon/arrow-outward-colored.png" alt=""
-        /></a>
-        <a
-          [class.in-development]="project.inDevelopment"
-          target="_blank"
-          href="{{ project.liveDemoLink }}"
-          >Live Test <img src="icon/arrow-outward-colored.png" alt=""
-        /></a>
-        <p class="coming-soon-text" *ngIf="project.inDevelopment">
-          Coming soon..
-        </p>
+      <div class="tech-and-buttons-container">
+        <div class="technologies-container">
+          <div *ngFor="let tech of project.technologies; let i = index">
+            <img src="{{ tech.imgSrc }}" alt="{{ tech.name }}" />
+            <span>{{ tech.name }}</span>
+          </div>
+        </div>
+        <div class="btns-container">
+          <a
+            [class.in-development]="project.inDevelopment"
+            target="_blank"
+            href="{{ project.gitHubLink }}"
+            >GitHub <img src="icon/arrow-outward-colored.png" alt=""
+          /></a>
+          <a
+            [class.in-development]="project.inDevelopment"
+            target="_blank"
+            href="{{ project.liveDemoLink }}"
+            >Live Test <img src="icon/arrow-outward-colored.png" alt=""
+          /></a>
+          <p class="coming-soon-text" *ngIf="project.inDevelopment">
+            Coming soon..
+          </p>
+        </div>
       </div>
     </div>
     <div class="right-container-content">
